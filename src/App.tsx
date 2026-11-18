@@ -11,17 +11,22 @@ import { BookDetailPage } from "./pages/BookDetailPage";
 import { LibraryPage } from "./pages/LibraryPage";
 import "./styles.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <AppLayout />,
-    children: [
-      { index: true, element: <SearchPage /> },
-      { path: "books/:bookId", element: <BookDetailPage /> },
-      { path: "library", element: <LibraryPage /> },
-    ],
-  },
-]);
+const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        { index: true, element: <SearchPage /> },
+        { path: "books/:bookId", element: <BookDetailPage /> },
+        { path: "library", element: <LibraryPage /> },
+      ],
+    },
+  ],
+  { basename },
+);
 
 function Bootstrap() {
   const dispatch = useAppDispatch();
