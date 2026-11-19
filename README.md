@@ -1,3 +1,5 @@
+https://daniilbukreev.github.io/BookTracker_mvp/
+
 # BookTracker — Frontend MVP (этап 3)
 
 На третьем этапе приложение работает автономно: каталог загружается из локального mock-модуля, а пользовательские записи хранятся в `localStorage`.
